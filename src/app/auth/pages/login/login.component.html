@@ -1,0 +1,51 @@
+<div class="container-fluid contenido">
+  <div class="col-12 col-sm-8 col-md-6 col-lg-4">
+    <div>Aqui va a ir la imagen</div>
+
+    <form
+      class="bg-white rounded-4 px-4"
+      autocomplete="off"
+      [formGroup]="miFormulario"
+      (ngSubmit)="login()"
+    >
+      >
+      <div class="pb-3 pt-4">
+        <label class="form-label">Correo Electronico</label>
+        <input
+          type="email"
+          formControlName="email"
+          class="form-control border"
+          placeholder="Ingrese su correo"
+        />
+      </div>
+      <div class="pb-4">
+        <label class="form-label">Contraseña</label>
+        <input
+          type="text"
+          class="form-control border"
+          formControlName="password"
+          placeholder="Ingrese su contraseña"
+        />
+      </div>
+      <div class="container-fluid pb-4">
+        <div class="row">
+          <span class="form-label col" id="label-olvidaste"
+            >Olvidaste tu contraseña?</span
+          >
+          <button type="submit" class="form-control col" id="boton-login">
+            Iniciar sesión
+          </button>
+        </div>
+      </div>
+      <div class="pb-4">
+        <button
+          type="button"
+          class="form-control border"
+          id="boton-crear-cuenta"
+        >
+          Sin cuenta? Crea una ahora
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,32 @@
+.contenido{
+    display: flex;
+    justify-content: center;
+	align-items: flex-start;
+    min-height: 95vh;
+    background-color: #001C27;
+}
+
+input{
+    background-color: #EDF2F7;
+    border-color: #398AB9!important;
+}
+
+#boton-login{
+    background-color: #398AB9;
+    border-color: #2d759f;
+    color:white;
+}
+
+#boton-crear-cuenta{
+    background-color: white;
+    border-color: #023B49!important;
+    color: #2A4365;
+}
+
+label{
+    color:#2A4365;
+}
+
+#label-olvidaste{
+    color:#2d759f;
+}
