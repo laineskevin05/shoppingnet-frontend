@@ -1,8 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ValidarTokenGuard } from './guards/validar-token.guard';
-
+import { LandingGeneralComponent} from './landing-general/landing-general.component'
 const routes: Routes = [
+  {
+    path:'landing',
+    component: LandingGeneralComponent,
+  },
   {
     path: 'auth',
     loadChildren: () => import('./auth/auth.module').then((m) => m.AuthModule),
