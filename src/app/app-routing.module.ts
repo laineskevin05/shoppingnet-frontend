@@ -6,9 +6,14 @@ import { PlanesComponent } from './planes/planes.component'
 import { DetalleProductoComponent } from './detalle-producto/detalle-producto.component'
 import { ProductosComponent } from './productos/productos.component'
 import { CarritoComponent } from './carrito/carrito.component'
+import { ListaEmpresasComponent } from './lista-empresas/lista-empresas.component'
 
 
 const routes: Routes = [
+  {
+    path: 'lista-empresas',
+    component: ListaEmpresasComponent
+  },
   {
     path: 'cart',
     component: CarritoComponent
