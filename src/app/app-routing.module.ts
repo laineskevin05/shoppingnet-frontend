@@ -2,10 +2,15 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ValidarTokenGuard } from './guards/validar-token.guard';
 import { LandingGeneralComponent} from './landing-general/landing-general.component'
+import { PlanesComponent } from './planes/planes.component'
 const routes: Routes = [
   {
     path:'landing',
     component: LandingGeneralComponent,
+  },
+  {
+    path:'planes',
+    component: PlanesComponent,
   },
   {
     path: 'auth',
