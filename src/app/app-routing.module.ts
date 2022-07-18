@@ -15,6 +15,13 @@ const routes: Routes = [
     canLoad: [ValidarTokenGuard],
   },
   {
+    path: 'admin-companies',
+    loadChildren: () =>
+      import('./companies/companies.module').then((m) => m.CompaniesModule),
+    canActivate: [ValidarTokenGuard],
+    canLoad: [ValidarTokenGuard],
+  },
+  {
     path: '**',
     redirectTo: 'auth',
   },

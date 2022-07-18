@@ -1,0 +1,16 @@
+#menu{
+    background-color: #EDF2F7;
+    min-height: 95vmin;
+}
+
+#title-menu{
+    color: #2C5282;
+}
+.menu-item{
+    background-color: #EDF2F7!important;
+    color: #2C5282;
+}
+
+.menu-item:hover{
+    color: #000000;
+}

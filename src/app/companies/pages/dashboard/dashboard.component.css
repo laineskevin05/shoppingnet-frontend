@@ -1,0 +1,26 @@
+.titulo{
+    font-weight: 200;
+    font-size: smaller;
+    color: #A0AEC0;
+}
+img{
+    height: 84px;
+}
+
+p{
+    color: #2A4365;
+}
+
+.dinero{
+    font-size: x-large;
+    font-weight: 700;
+}
+
+.este-mes{
+    font-size: small;
+}
+
+.bg-dash-input{
+    background-color: rgb(237, 242, 247, 0.9);
+    color: #2A4365;
+}

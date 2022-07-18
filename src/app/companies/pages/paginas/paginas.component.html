@@ -1,0 +1,74 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12 container-fluid border-bottom border-4 mb-4 mt-4" id="hr">
+            <div class="row ">
+                <div class="col-3 d-flex align-items-center">
+                    <span>Titulo</span>
+                </div>
+                <div class="col-3 d-flex align-items-center">
+                    <span>Estado</span>
+                </div>
+                <div class="col-3 d-flex align-items-center">
+                    <span>Enlace</span>
+                </div>
+                <div class="col-3 d-flex justify-content-center ">
+                    <button class="btn mb-1" id="btn-aniadir-page">Añadir pagina</button>
+                </div>
+
+            </div>
+        </div>
+        <div class="col-12 bg-white border mb-3 rounded-2">
+            <div class="row py-3">
+                <div class="col-3 d-flex flex-column ">
+                    <span>Home</span>
+                    <span><small>Actualizado hace 3 horas</small></span>
+                </div>
+                <div class="col-3 d-flex align-items-center">
+                    <button class="btn btn-outline-success rounded-pill ">Principal</button>
+                </div>
+                <div class="col-3 d-flex align-items-center">
+                    <span>Ver</span>
+                </div>
+                <div class="col-3 d-flex justify-content-center">
+                    <button class="btn" [routerLink]="['editar/','home']">Editar</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12 bg-white border mb-3 rounded-2">
+            <div class="row py-3">
+                <div class="col-3 d-flex flex-column ">
+                    <span>Contacto</span>
+                    <span><small>Actualizado hace 3 horas</small></span>
+                </div>
+                <div class="col-3 d-flex align-items-center">
+                    <button class="btn btn-outline-warning rounded-pill ">Oculto</button>
+                </div>
+                <div class="col-3 d-flex align-items-center">
+                    <span>Ver</span>
+                </div>
+                <div class="col-3 d-flex justify-content-center">
+                    <button class="btn" [routerLink]="['editar/','/contacto']" >Editar</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12 bg-white border mb-3 rounded-2">
+            <div class="row py-3">
+                <div class="col-3 d-flex flex-column ">
+                    <span>Lista de productos</span>
+                    <span><small>Actualizado hace 3 horas</small></span>
+                </div>
+                <div class="col-3 d-flex align-items-center">
+                    <button class="btn btn-outline-success rounded-pill ">Publicado</button>
+                </div>
+                <div class="col-3 d-flex align-items-center">
+                    <span>Ver</span>
+                </div>
+                <div class="col-3 d-flex justify-content-center">
+                    <button type="button" class="btn" [routerLink]="['editar/','/lista-de-productos']">Editar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

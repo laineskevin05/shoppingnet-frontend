@@ -1,0 +1,62 @@
+
+<div class="container-fluid">
+    <div class="row p-0">
+        <h3 class="col-12 fs-5 px-0 mb-2 mt-3">Previsualizacion</h3>
+        <div class="col-12 mt-3 container-fluid p-0" >
+            <div class="row m-0">
+                <div class="bloque border border-secondary " *ngFor="let modulo of modulos; let i = index" [innerHTML]="modulo.html" 
+                    [ngClass]="['col-' + modulo.col_s, 'col-lg-' + modulo.col_g]"
+                ></div>
+
+                <div class="dropdown">
+                    <a class="btn btn-secondary float-end rounded-circle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                        +
+                    </a>
+
+                    <!-- Opciones del boton aniadir -->
+                    <ul class="dropdown-menu px-2" aria-labelledby="dropdownMenuLink">
+                      <li><span class="" #selectNuevoTTelefono>Tamaño en telefonos</span></li>
+                      <select class="form-select mb-2" >
+                        <option *ngFor="let item of ['1','2','3','4','5','6','7','8','9','10','11','12'].reverse()" [value]="item">{{item}}</option>
+                        
+                      </select>
+
+                      <li><span class="">Tamaño en pc</span></li>
+                      <select class="form-select mb-2" #selectNuevoTPc >
+                        <option *ngFor="let item of ['1','2','3','4','5','6','7','8','9','10','11','12'].reverse()" [value]="item">{{item}}</option>
+                      </select>
+
+                      <button class="btn btn-primary" (click)="nuevoBloque()"> Añadir</button>
+                    </ul>
+
+                  </div>
+            </div>
+        </div>
+
+        <!-- Tab -->
+        <ul class="nav nav-tabs">
+            <li class="nav-item">
+              <span class="nav-link " [ngClass]="{'active': tab === '0'}" (click)="tab='0'">Editor WISIWIG</span>
+            </li>
+            <li class="nav-item">
+                <span class="nav-link " [ngClass]="{'active': tab === '1'}" (click)="tab='1'">Editor de Codigo</span>
+            </li>
+          </ul>
+        
+        <!-- Editor WISIWIG -->
+        <div class="col-12 px-0 bg-white" *ngIf="tab ==='0'">
+            <form [formGroup]="miFormulario">
+                <select class="form-select " formControlName="valorSelect"  (change)="cambioSelect()" >
+                    
+                    <option *ngFor="let modulo of modulos; let i= index" [value]="i">Modulo #{{i}}</option>
+                </select>
+
+            </form>
+            <ckeditor [editor]="Editor" [data]="moduloActual.html" #myNameElem (change)="onChange($event)"></ckeditor>
+        </div>
+        <!-- Esto sera el editor de codigo y solo se mostrara cuando se seleccione en el tab -->
+        <div class="col-12 px-0 bg-white" *ngIf="tab ==='1'">
+            <div> No esta implementado</div>
+        </div>
+    </div>
+</div>
