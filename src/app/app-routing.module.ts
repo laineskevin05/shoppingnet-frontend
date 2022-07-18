@@ -3,7 +3,13 @@ import { RouterModule, Routes } from '@angular/router';
 import { ValidarTokenGuard } from './guards/validar-token.guard';
 import { LandingGeneralComponent} from './landing-general/landing-general.component'
 import { PlanesComponent } from './planes/planes.component'
+import { DetalleProductoComponent } from './detalle-producto/detalle-producto.component'
+
 const routes: Routes = [
+  {
+    path: 'detalle-producto',
+    component: DetalleProductoComponent
+  },
   {
     path:'landing',
     component: LandingGeneralComponent,
@@ -27,6 +33,7 @@ const routes: Routes = [
     path: '**',
     redirectTo: 'auth',
   },
+  
 ];
 
 @NgModule({
