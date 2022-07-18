@@ -6,6 +6,7 @@ import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { PaginasComponent } from './pages/paginas/paginas.component';
 import { EditPageComponent } from './pages/edit-page/edit-page.component';
 
+
 const routes: Routes = [
   {
     path: '',
@@ -14,7 +15,6 @@ const routes: Routes = [
       { path: 'dashboard', component: DashboardComponent },
       { path: 'pages', component: PaginasComponent },
       { path: 'pages/editar/:id', component: EditPageComponent },
-
       { path: '**', redirectTo: 'dashboard' },
     ],
   },
