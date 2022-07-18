@@ -1,0 +1,30 @@
+.imagen-detalle{
+    width: 65%;
+}
+
+.gallery{
+    display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: flex-start;
+	align-items: center;
+	align-content: stretch;
+}
+
+.img-preview{
+    width: 40px;
+    height: 40px;
+    background-color: rgb(160, 172, 172);
+    border-radius: 5px;
+}
+
+.gallery-detail{
+    width: 80%;
+    margin: auto;
+    display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: space-evenly;
+	align-items: center;
+	align-content: stretch;
+}
