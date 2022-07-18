@@ -20,6 +20,14 @@ h3{
     padding-bottom: 100px;
     border-radius: 10px;
 }
+.container-flex{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+	justify-content: space-between;
+	align-items: flex-start;
+	align-content: flex-start;
+}
 table{
     background-color: white !important;
     caption-side: bottom !important;
@@ -31,5 +39,8 @@ input{
     width: 80%;
 }
 .h3-pad{
-    padding-top: 100px;
+    padding-top: 70px;
+}
+.logo{
+    width: 20%;
 }
