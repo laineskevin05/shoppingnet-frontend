@@ -4,8 +4,19 @@ import { ValidarTokenGuard } from './guards/validar-token.guard';
 import { LandingGeneralComponent} from './landing-general/landing-general.component'
 import { PlanesComponent } from './planes/planes.component'
 import { DetalleProductoComponent } from './detalle-producto/detalle-producto.component'
+import { ProductosComponent } from './productos/productos.component'
+import { CarritoComponent } from './carrito/carrito.component'
+
 
 const routes: Routes = [
+  {
+    path: 'cart',
+    component: CarritoComponent
+  },
+  {
+    path: 'productos',
+    component: ProductosComponent
+  },
   {
     path: 'detalle-producto',
     component: DetalleProductoComponent
