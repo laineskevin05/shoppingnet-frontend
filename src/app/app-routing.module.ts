@@ -7,9 +7,18 @@ import { DetalleProductoComponent } from './detalle-producto/detalle-producto.co
 import { ProductosComponent } from './productos/productos.component'
 import { CarritoComponent } from './carrito/carrito.component'
 import { ListaEmpresasComponent } from './lista-empresas/lista-empresas.component'
-
+import { OrdenesComponent } from './ordenes/ordenes.component'
+import { ArchivosComponent } from './archivos/archivos.component'
 
 const routes: Routes = [
+  {
+    path: 'archivos',
+    component: ArchivosComponent
+  },
+  {
+    path: 'ordenes',
+    component: OrdenesComponent
+  },
   {
     path: 'lista-empresas',
     component: ListaEmpresasComponent

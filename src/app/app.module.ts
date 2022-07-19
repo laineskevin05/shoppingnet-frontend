@@ -10,10 +10,13 @@ import { DetalleProductoComponent } from './detalle-producto/detalle-producto.co
 import { ProductosComponent } from './productos/productos.component';
 import { CarritoComponent } from './carrito/carrito.component';
 import { ListaEmpresasComponent } from './lista-empresas/lista-empresas.component';
+import { OrdenesComponent } from './ordenes/ordenes.component';
+import { ArchivosComponent } from './archivos/archivos.component';
+
 
 
 @NgModule({
-  declarations: [AppComponent, LandingGeneralComponent, DetalleProductoComponent, PlanesComponent, ProductosComponent, CarritoComponent, ListaEmpresasComponent],
+  declarations: [AppComponent, LandingGeneralComponent, DetalleProductoComponent, PlanesComponent, ProductosComponent, CarritoComponent, ListaEmpresasComponent, OrdenesComponent, ArchivosComponent],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],

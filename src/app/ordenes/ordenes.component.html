@@ -1,0 +1,174 @@
+<nav class="navbar navbar-config navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#"><img class="logo-marca" src="./../../assets/Shoppignet.png"></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          
+        </ul>
+        <div>
+            <button class="btn btn-danger btn-sm" >Pro plan</button>
+            <img class="avatar ms-3" src="./../../assets/avatar.png" alt="imagen de perfil">
+        </div>
+        
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <div class="row principal">
+        <div class="col-2 panel-izquierdo">
+            <div class="menus ms-5 mt-5">
+                <h5>Administracion</h5>
+                <p>Dashboard</p>
+                <p>Paginas</p>
+                <p>Products</p>
+                <p>Orders</p>
+                <p>Archivos</p>
+                <p>Usuarios</p>
+                <p>Configuraciones del sitio</p>
+                <p>Perfil</p>
+                <h5>Caracteristicas Pro</h5>
+                <p>Temas</p>
+                <p>Actualizar plan</p>
+            </div>
+            
+            <button class="btn-final">Cerrar Sesion</button>
+           
+        </div>
+        <div class="col-10">
+            <div class="container ">
+                <div class="contenido mt-4">
+                    <div class="encabezado d-flex justify-content-between">
+                        <p>Lista de Ordenes</p>
+                        <div class="filtros">
+                            <div class="form-col">
+                                <select name="options" id="options">
+                                    <option value="">Seleccionar Col.</option>
+                                </select>
+                            </div>
+                            <div class="ms-3">
+                                <button type="button" class="btn btn-outline-dark ">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-filter" viewBox="0 0 16 16">
+                                        <path d="M6 10.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5zm-2-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm-2-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5z"/>
+                                    </svg>
+                                </button>
+                            </div>
+                            <input class="form-control form-control-sm ms-3" type="text" placeholder=".form-control-sm" aria-label=".form-control-sm example">
+                            <button class="btn btn-primary btn-sm ms-3" >Añadir</button>
+                        </div>
+                    </div>
+
+                    <div>
+                        <table class="table table-hover mt-4">
+                            <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Fecha</th>
+                                <th scope="col">Nº de orden</th>
+                                <th scope="col">Usuario</th>
+                                <th scope="col">Total</th>
+                                <th scope="col">Estado</th>
+                                <th scope="col">Acciones</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <th scope="row">1</th>
+                                <td>20-06-2022 13:00</td>
+                                <td># 123-456ABC</td>
+                                <td>Moises</td>
+                                <td>L. 500</td>
+                                <td>Pendiente</td>
+                                <td>
+                                    <a class="btn btn-light" data-bs-toggle="modal" href="#exampleModalToggle" role="button"><b>· · ·</b></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">1</th>
+                                <td>20-06-2022 13:00</td>
+                                <td># 123-456ABC</td>
+                                <td>Moises</td>
+                                <td>L. 500</td>
+                                <td>Pendiente</td>
+                                <td>
+                                    <a class="btn btn-light" data-bs-toggle="modal" href="#exampleModalToggle" role="button"><b>· · ·</b></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">1</th>
+                                <td>20-06-2022 13:00</td>
+                                <td># 123-456ABC</td>
+                                <td>Moises</td>
+                                <td>L. 500</td>
+                                <td>Pendiente</td>
+                                <td>
+                                    <a class="btn btn-light" data-bs-toggle="modal" href="#exampleModalToggle" role="button"><b>· · ·</b></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">1</th>
+                                <td>20-06-2022 13:00</td>
+                                <td># 123-456ABC</td>
+                                <td>Moises</td>
+                                <td>L. 500</td>
+                                <td>Pendiente</td>
+                                <td>
+                                    <a class="btn btn-light" data-bs-toggle="modal" href="#exampleModalToggle" role="button"><b>· · ·</b></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">1</th>
+                                <td>20-06-2022 13:00</td>
+                                <td># 123-456ABC</td>
+                                <td>Moises</td>
+                                <td>L. 500</td>
+                                <td>Pendiente</td>
+                                <td>
+                                    <a class="btn btn-light" data-bs-toggle="modal" href="#exampleModalToggle" role="button"><b>· · ·</b></a>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="">
+                    <nav aria-label="Page navigation example">
+                        <ul class="pagination justify-content-center">
+                          <li class="page-item disabled">
+                            <a class="page-link">Previous</a>
+                          </li>
+                          <li class="page-item"><a class="page-link" href="#">1</a></li>
+                          <li class="page-item"><a class="page-link" href="#">2</a></li>
+                          <li class="page-item"><a class="page-link" href="#">3</a></li>
+                          <li class="page-item">
+                            <a class="page-link" href="#">Next</a>
+                          </li>
+                        </ul>
+                      </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+  </main>
+
+
+  <!-- modal -->
+
+  <div class="modal fade contenido-modal" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalToggleLabel">Opciones</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-footer opciones">
+        <button class="btn btn-light">Actualizar</button>
+        <button class="btn btn-light">Anular</button>
+        <button class="btn btn-light">Detalle</button>
+      </div>
+    </div>
+  </div>
+</div>
