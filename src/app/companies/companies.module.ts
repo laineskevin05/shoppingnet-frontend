@@ -1,6 +1,10 @@
 import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
+
 import { CommonModule } from '@angular/common';
 import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
+import { MonacoEditorModule } from 'ngx-monaco-editor';
 
 import { CompaniesRoutingModule } from './companies-routing.module';
 import { SharedModule } from './../shared/shared.module';
@@ -21,7 +25,9 @@ import { ReactiveFormsModule } from '@angular/forms';
   ],
   imports: [
     CommonModule,
+    FormsModule,
     CKEditorModule,
+    MonacoEditorModule.forRoot(),
 
     ReactiveFormsModule,
     CompaniesRoutingModule,

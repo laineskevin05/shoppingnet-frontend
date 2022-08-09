@@ -13,11 +13,19 @@ import '../../types/interfaces';
   styleUrls: ['./edit-page.component.css'],
 })
 export class EditPageComponent implements OnInit {
+  ///Edito CKEditor
   public Editor = ClassicEditor;
   public modulos: Bloque[] = [
     { html: '<p>Hello, world!</p>', col_s: '12', col_g: '12' },
     { html: '<p>aaaa</p>', col_s: '12', col_g: '6' },
   ];
+  //fin CKEditor
+
+  ///Editor monaco
+  editorOptions = { theme: 'vs-dark', language: 'javascript' };
+  code: string = 'function x() {\nconsole.log("Hello world!");\n}';
+  //Fin editor monaco
+
   public tab: string = '0';
 
   public moduloActual: Bloque = this.modulos[0];

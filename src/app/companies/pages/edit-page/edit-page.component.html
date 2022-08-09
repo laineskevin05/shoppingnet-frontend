@@ -56,7 +56,9 @@
         </div>
         <!-- Esto sera el editor de codigo y solo se mostrara cuando se seleccione en el tab -->
         <div class="col-12 px-0 bg-white" *ngIf="tab ==='1'">
-            <div> No esta implementado</div>
+            <div style="height: 500px">
+                <ngx-monaco-editor [options]="editorOptions" [(ngModel)]="code" style="height: 500px"></ngx-monaco-editor>
+            </div>
         </div>
     </div>
 </div>

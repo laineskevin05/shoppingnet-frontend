@@ -21,6 +21,8 @@
     "@ckeditor/ckeditor5-angular": "^4.0.0",
     "@ckeditor/ckeditor5-build-classic": "^34.2.0",
     "bootstrap": "^5.2.0-beta1",
+    "monaco-editor": "^0.34.0",
+    "ngx-monaco-editor": "^12.0.0",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"
