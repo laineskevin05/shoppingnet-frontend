@@ -17,58 +17,26 @@
 
             </div>
         </div>
-        <div class="col-12 bg-white border mb-3 rounded-2">
+        
+
+        <div class="col-12 bg-white border mb-3 rounded-2" *ngFor="let pagina of paginas">
             <div class="row py-3">
                 <div class="col-3 d-flex flex-column ">
-                    <span>Home</span>
-                    <span><small>Actualizado hace 3 horas</small></span>
+                    <span>{{pagina.nombre | titlecase}}</span>
+                    <span><small>Actualizado el {{pagina.updatedAt | date:'longDate'}}</small></span>
                 </div>
                 <div class="col-3 d-flex align-items-center">
-                    <button class="btn btn-outline-success rounded-pill ">Principal</button>
+                    <button class="btn btn-outline-success rounded-pill ">{{pagina.detalle | titlecase}}</button>
                 </div>
                 <div class="col-3 d-flex align-items-center">
                     <span>Ver</span>
                 </div>
                 <div class="col-3 d-flex justify-content-center">
-                    <button class="btn" [routerLink]="['editar/','home']">Editar</button>
+                    <button class="btn" [routerLink]="['editar/',pagina._id]" >Editar</button>
                 </div>
             </div>
         </div>
 
-        <div class="col-12 bg-white border mb-3 rounded-2">
-            <div class="row py-3">
-                <div class="col-3 d-flex flex-column ">
-                    <span>Contacto</span>
-                    <span><small>Actualizado hace 3 horas</small></span>
-                </div>
-                <div class="col-3 d-flex align-items-center">
-                    <button class="btn btn-outline-warning rounded-pill ">Oculto</button>
-                </div>
-                <div class="col-3 d-flex align-items-center">
-                    <span>Ver</span>
-                </div>
-                <div class="col-3 d-flex justify-content-center">
-                    <button class="btn" [routerLink]="['editar/','/contacto']" >Editar</button>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-12 bg-white border mb-3 rounded-2">
-            <div class="row py-3">
-                <div class="col-3 d-flex flex-column ">
-                    <span>Lista de productos</span>
-                    <span><small>Actualizado hace 3 horas</small></span>
-                </div>
-                <div class="col-3 d-flex align-items-center">
-                    <button class="btn btn-outline-success rounded-pill ">Publicado</button>
-                </div>
-                <div class="col-3 d-flex align-items-center">
-                    <span>Ver</span>
-                </div>
-                <div class="col-3 d-flex justify-content-center">
-                    <button type="button" class="btn" [routerLink]="['editar/','/lista-de-productos']">Editar</button>
-                </div>
-            </div>
-        </div>
+        
     </div>
 </div>

@@ -1,3 +1,4 @@
+import { AuthResponse } from './../../interfaces/interfaces';
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -27,12 +28,12 @@ export class LoginComponent {
   login() {
     const { email, password } = this.miFormulario.value;
 
-    this.authService.login(email, password).subscribe((ok) => {
-      console.log('Login exitoso!', ok);
-      if (ok === true) {
-        this.router.navigateByUrl('/admin/');
+    this.authService.login(email, password).subscribe((resp: AuthResponse) => {
+      console.log('Login exitoso!', resp.ok, resp.usuario?.tipoUsuario);
+      if (resp.ok === true) {
+        this.router.navigateByUrl('/admin-companies/');
       } else {
-        console.log('Error', ok, 'error');
+        console.log('Error', resp.ok, 'error');
       }
     });
   }

@@ -1,6 +1,8 @@
-import { NgModule } from '@angular/core';
+import { NgModule, LOCALE_ID } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
+import locateES from '@angular/common/locales/es-HN';
+import { registerLocaleData } from '@angular/common';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -12,6 +14,7 @@ import { CarritoComponent } from './carrito/carrito.component';
 import { ListaEmpresasComponent } from './lista-empresas/lista-empresas.component';
 import { OrdenesComponent } from './ordenes/ordenes.component';
 import { ArchivosComponent } from './archivos/archivos.component';
+registerLocaleData(locateES, 'es');
 
 @NgModule({
   declarations: [
@@ -26,7 +29,7 @@ import { ArchivosComponent } from './archivos/archivos.component';
     ArchivosComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule],
-  providers: [],
+  providers: [{ provide: LOCALE_ID, useValue: 'es' }],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

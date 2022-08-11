@@ -5,9 +5,8 @@
         <div class="col-12 mt-3 container-fluid p-0" >
             <div class="row m-0">
                 <div class="bloque border border-secondary " *ngFor="let modulo of modulos; let i = index" [innerHTML]="modulo.html" 
-                    [ngClass]="['col-' + modulo.col_s, 'col-lg-' + modulo.col_g]"
+                    [ngClass]="['col-' + modulo.col_s , 'col-lg-' + modulo.col_g]"
                 ></div>
-
                 <div class="dropdown">
                     <a class="btn btn-secondary float-end rounded-circle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
                         +
@@ -52,7 +51,7 @@
                 </select>
 
             </form>
-            <ckeditor [editor]="Editor" [data]="moduloActual.html" #myNameElem (change)="onChange($event)"></ckeditor>
+            <ckeditor [editor]="Editor" [data]="moduloActual?.html || ''" #myNameElem (change)="onChange($event)"></ckeditor>
         </div>
         <!-- Esto sera el editor de codigo y solo se mostrara cuando se seleccione en el tab -->
         <div class="col-12 px-0 bg-white" *ngIf="tab ==='1'">
