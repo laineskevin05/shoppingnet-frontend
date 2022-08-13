@@ -26,7 +26,7 @@ export class PagesService {
       localStorage.getItem('token') || ''
     );
 
-    return this.http.post<CreatePageResponse>(url, { headers });
+    return this.http.post<CreatePageResponse>(url, pagina, { headers });
   }
 
   getPaginas(): Observable<GetPageResponse> {
@@ -38,5 +38,19 @@ export class PagesService {
       localStorage.getItem('token') || ''
     );
     return this.http.get<GetPageResponse>(url, { headers });
+  }
+
+  actualizarPagina(pagina: Page): Observable<CreatePageResponse> {
+    const url: string = `${this.baseURL}/companies/page/update/`;
+    const headers = new HttpHeaders().set(
+      'x-token',
+      localStorage.getItem('token') || ''
+    );
+
+    return this.http.post<CreatePageResponse>(
+      url,
+      { id: pagina?._id, page: pagina },
+      { headers }
+    );
   }
 }

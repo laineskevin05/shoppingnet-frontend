@@ -1,42 +1,151 @@
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-12 container-fluid border-bottom border-4 mb-4 mt-4" id="hr">
-            <div class="row ">
-                <div class="col-3 d-flex align-items-center">
-                    <span>Titulo</span>
-                </div>
-                <div class="col-3 d-flex align-items-center">
-                    <span>Estado</span>
-                </div>
-                <div class="col-3 d-flex align-items-center">
-                    <span>Enlace</span>
-                </div>
-                <div class="col-3 d-flex justify-content-center ">
-                    <button class="btn mb-1" id="btn-aniadir-page">Añadir pagina</button>
-                </div>
-
-            </div>
+<div class="container-fluid" style="max-height: 90vh; overflow-y: scroll">
+  <div class="row pe-2">
+    <div
+      class="col-12 container-fluid border-bottom border-4 mb-4 mt-4"
+      id="hr"
+    >
+      <div class="row">
+        <div class="col-3 d-flex align-items-center">
+          <span>Titulo</span>
         </div>
-        
-
-        <div class="col-12 bg-white border mb-3 rounded-2" *ngFor="let pagina of paginas">
-            <div class="row py-3">
-                <div class="col-3 d-flex flex-column ">
-                    <span>{{pagina.nombre | titlecase}}</span>
-                    <span><small>Actualizado el {{pagina.updatedAt | date:'longDate'}}</small></span>
-                </div>
-                <div class="col-3 d-flex align-items-center">
-                    <button class="btn btn-outline-success rounded-pill ">{{pagina.detalle | titlecase}}</button>
-                </div>
-                <div class="col-3 d-flex align-items-center">
-                    <span>Ver</span>
-                </div>
-                <div class="col-3 d-flex justify-content-center">
-                    <button class="btn" [routerLink]="['editar/',pagina._id]" >Editar</button>
-                </div>
-            </div>
+        <div class="col-3 d-flex align-items-center">
+          <span>Estado</span>
         </div>
+        <div class="col-3 d-flex align-items-center">
+          <span>Enlace</span>
+        </div>
+        <div class="col-3 d-flex justify-content-center">
+          <!-- <button class="btn mb-1" id="btn-aniadir-page">Añadir pagina</button> -->
+          <button
+            type="button"
+            id="btn-aniadir-page"
+            class="btn mb-1"
+            data-bs-toggle="modal"
+            data-bs-target="#modalNuevaPagina"
+          >
+            Añadir pagina
+          </button>
+          <!-- <div class="dropdown">
+            <a
+              class="btn btn-secondary float-end mb-1"
+              href="#"
+              role="button"
+              id="btn-aniadir-page"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              Añadir pagina
+            </a>
 
-        
+            
+
+              <li><span class="">Tamaño en pc</span></li>
+            </ul>
+          </div> -->
+        </div>
+      </div>
     </div>
+
+    <div
+      class="col-12 bg-white border mb-3 rounded-2"
+      *ngFor="let pagina of paginas"
+    >
+      <div class="row py-3">
+        <div class="col-3 d-flex flex-column">
+          <span>{{ pagina.nombre | titlecase }}</span>
+          <span
+            ><small
+              >Actualizado el {{ pagina.updatedAt | date: "longDate" }}</small
+            ></span
+          >
+        </div>
+        <div class="col-3 d-flex align-items-center">
+          <button class="btn btn-outline-success rounded-pill">
+            {{ pagina.detalle | titlecase }}
+          </button>
+        </div>
+        <div class="col-3 d-flex align-items-center">
+          <span>Ver</span>
+        </div>
+        <div class="col-3 d-flex justify-content-center">
+          <button class="btn" [routerLink]="['editar/', pagina._id]">
+            Editar
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal -->
+<div
+  class="modal fade"
+  id="modalNuevaPagina"
+  tabindex="-1"
+  aria-labelledby="modalNuevaPaginaLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-xl">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modalNuevaPaginaLabel">Nueva pagina</h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body" style="max-height: 60vh; overflow: auto">
+        <h3>Plantillas</h3>
+
+        <!-- Cards de plantillas -->
+        <div
+          class="card"
+          style="width: 12rem"
+          [ngClass]="{ 'border border-3 border-info': plantillaSelect === 0 }"
+          (click)="cambioPlantillaSelect(0)"
+        >
+          <div class="card-body">
+            <h6 class="card-subtitle mb-2 text-muted">Plantilla en blanco</h6>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 128 128"
+              width="156px"
+              height="156px"
+              class="card-text"
+            >
+              <path
+                fill="#F7F7FB"
+                d="M85,9H24.7c-2.5,0-4.6,2.1-4.6,4.6v100.8c0,2.5,2.1,4.6,4.6,4.6h78.5c2.5,0,4.6-2.1,4.6-4.6V31.9L85,9v18.3c0,2.5,2.1,4.6,4.6,4.6h18.3"
+              />
+              <path
+                fill="#DEDFE6"
+                d="M85.1 94.5H41c-1.7 0-3-1.3-3-3s1.3-3 3-3h44.1c1.7 0 3 1.3 3 3S86.8 94.5 85.1 94.5zM85.1 76.2H41c-1.7 0-3-1.3-3-3s1.3-3 3-3h44.1c1.7 0 3 1.3 3 3S86.8 76.2 85.1 76.2zM85.1 57.8H41c-1.7 0-3-1.3-3-3s1.3-3 3-3h44.1c1.7 0 3 1.3 3 3S86.8 57.8 85.1 57.8z"
+              />
+              <g>
+                <path
+                  fill="#464C55"
+                  d="M110,29.8L87.1,6.9C86.5,6.4,85.6,6,84.7,6c0,0,0,0,0,0H24.7c-4.2,0-7.6,3.4-7.6,7.6v100.8c0,4.2,3.4,7.6,7.6,7.6h78.6c4.2,0,7.6-3.4,7.6-7.6V31.9C110.9,31.1,110.5,30.3,110,29.8z M88,16.2l12.7,12.7H89.6c-0.9,0-1.6-0.7-1.6-1.6V16.2z M104.8,114.4c0,0.9-0.7,1.6-1.6,1.6H24.7c-0.9,0-1.6-0.7-1.6-1.6V13.6c0-0.9,0.7-1.6,1.6-1.6h57.2v15.3c0,4.2,3.4,7.6,7.6,7.6h15.3V114.4z"
+                />
+              </g>
+            </svg>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn" data-bs-dismiss="modal">
+          Cancelar
+        </button>
+        <button
+          type="button"
+          class="btn btn-success"
+          (click)="crearPagina()"
+          data-bs-dismiss="modal"
+        >
+          Crear
+        </button>
+      </div>
+    </div>
+  </div>
 </div>

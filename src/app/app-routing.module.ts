@@ -1,52 +1,53 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ValidarTokenGuard } from './guards/validar-token.guard';
-import { LandingGeneralComponent} from './landing-general/landing-general.component'
-import { PlanesComponent } from './planes/planes.component'
-import { DetalleProductoComponent } from './productos/pages/detalle-producto/detalle-producto.component'
-import { ProductosComponent } from './productos/pages/products/productos.component'
-import { CarritoComponent } from './carrito/carrito.component'
-import { ListaEmpresasComponent } from './lista-empresas/lista-empresas.component'
-import { OrdenesComponent } from './ordenes/ordenes.component'
-import { ArchivosComponent } from './archivos/archivos.component'
+import { LandingGeneralComponent } from './landing-general/landing-general.component';
+import { PlanesComponent } from './planes/planes.component';
+import { DetalleProductoComponent } from './productos/pages/detalle-producto/detalle-producto.component';
+import { ProductosComponent } from './productos/pages/products/productos.component';
+import { CarritoComponent } from './carrito/carrito.component';
+import { ListaEmpresasComponent } from './lista-empresas/lista-empresas.component';
+import { OrdenesComponent } from './ordenes/ordenes.component';
+import { ArchivosComponent } from './archivos/archivos.component';
 
 const routes: Routes = [
   {
     path: 'archivos',
-    component: ArchivosComponent
+    component: ArchivosComponent,
   },
   {
     path: 'ordenes',
-    component: OrdenesComponent
+    component: OrdenesComponent,
   },
   {
     path: 'lista-empresas',
-    component: ListaEmpresasComponent
+    component: ListaEmpresasComponent,
   },
   {
     path: 'cart',
-    component: CarritoComponent
+    component: CarritoComponent,
   },
   {
     path: 'productos',
-    component: ProductosComponent
+    component: ProductosComponent,
   },
   {
     path: 'detalle-producto',
-    component: DetalleProductoComponent
+    component: DetalleProductoComponent,
   },
   {
-    path:'landing',
+    path: 'landing',
     component: LandingGeneralComponent,
   },
   {
-    path:'planes',
+    path: 'planes',
     component: PlanesComponent,
   },
 
   {
     path: 'productos',
-    loadChildren: () => import('./productos/productos.module').then((m) => m.ProductosModule)
+    loadChildren: () =>
+      import('./productos/productos.module').then((m) => m.ProductosModule),
   },
   {
     path: 'auth',
@@ -70,7 +71,6 @@ const routes: Routes = [
     path: '**',
     redirectTo: 'auth',
   },
-  
 ];
 
 @NgModule({
