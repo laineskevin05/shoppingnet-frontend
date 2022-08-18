@@ -22,6 +22,14 @@ export class ProductosService {
     );
     return this.http.get<GetProductosResponse[]>(url, { headers });
   }
+  getProductosInPage(idCompani: string): Observable<GetProductosResponse[]> {
+    const url: string = `${this.baseURL}/productos/inventario/${idCompani}`;
+    const headers = new HttpHeaders().set(
+      'x-token',
+      localStorage.getItem('token') || ''
+    );
+    return this.http.get<GetProductosResponse[]>(url, { headers });
+  }
 }
 
 export interface GetProductosResponse {
@@ -29,7 +37,14 @@ export interface GetProductosResponse {
   _id: string;
   categoria: string;
   descripcion: string;
+  imagen: Imagen;
   nombre: string;
-  precio?: number;
-  stock?: number;
+  precio: string;
+  stock: string;
+  usuario?: string;
+}
+
+export interface Imagen {
+  public_id: string;
+  secure_url: string;
 }
