@@ -44,25 +44,17 @@
                     <div class="gallery">
 
                     
-                        <img class="imagen-detalle rounded float-end"    src="https://static.zara.net/photos///2022/I/0/2/p/7545/408/058/2/w/1266/7545408058_2_1_1.jpg?ts=1657728797924" alt="">
-                        <div class="container">
-                            <div class="gallery-detail mt-3">
-                                <button class="img-preview"></button>
-                                <button class="img-preview"></button>
-                                <button class="img-preview"></button>
-                                <button class="img-preview"></button>
-                                <button class="img-preview"></button>
-                            </div>
-                        </div>
+                        <img class="imagen-detalle rounded float-end" [src]="producto.imagen.secure_url" alt="">
+                        
                     </div>
                 </div>
                 <div class="col-7">
-                    <h1 class="ms-5">Camisa lisa</h1>
+                    <h1 class="ms-5">{{producto.nombre}}</h1>
                     <div class="ms-5 mt-5">
-                        <h2 class="ms-5">Camisa lisa</h2>
-                        <p class="ms-5 mt-3">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Officia voluptatibus nulla voluptatum eveniet ad ullam iure molestiae laborum provident dolores?</p>
-                        <p class="ms-5 mt-3">Color: gris | 7545/242</p>
-                        <p class="ms-5 mt-3"><b>Precio: L. 1,295.00 HNL</b></p>
+                        <h2 class="ms-5">{{producto.nombre}}</h2>
+                        <p class="ms-5 mt-3">{{producto.descripcion}}</p>
+                        <p class="ms-5 mt-3">{{producto.categoria}} | {{producto._id}}</p>
+                        <p class="ms-5 mt-3"><b>Precio: L. {{producto.precio}} HNL</b></p>
                         <button type="button" class="btn btn-warning ms-5 mt-3"><b>Comprar</b></button>
                     </div>
                 </div>

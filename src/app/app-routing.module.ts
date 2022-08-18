@@ -3,8 +3,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { ValidarTokenGuard } from './guards/validar-token.guard';
 import { LandingGeneralComponent } from './landing-general/landing-general.component';
 import { PlanesComponent } from './planes/planes.component';
-import { DetalleProductoComponent } from './productos/pages/detalle-producto/detalle-producto.component';
-import { ProductosComponent } from './productos/pages/products/productos.component';
+import { DetalleProductoComponent } from './companies/productos/pages/detalle-producto/detalle-producto.component';
+import { ProductosComponent } from './companies/productos/pages/products/productos.component';
 import { CarritoComponent } from './carrito/carrito.component';
 import { ListaEmpresasComponent } from './lista-empresas/lista-empresas.component';
 import { OrdenesComponent } from './ordenes/ordenes.component';
@@ -28,14 +28,6 @@ const routes: Routes = [
     component: CarritoComponent,
   },
   {
-    path: 'productos',
-    component: ProductosComponent,
-  },
-  {
-    path: 'detalle-producto',
-    component: DetalleProductoComponent,
-  },
-  {
     path: 'landing',
     component: LandingGeneralComponent,
   },
@@ -47,7 +39,7 @@ const routes: Routes = [
   {
     path: 'productos',
     loadChildren: () =>
-      import('./productos/productos.module').then((m) => m.ProductosModule),
+      import('./companies/productos/productos.module').then((m) => m.ProductosModule),
   },
   {
     path: 'auth',

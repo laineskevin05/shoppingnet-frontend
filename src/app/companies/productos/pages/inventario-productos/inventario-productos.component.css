@@ -1,0 +1,93 @@
+.navbar-config{
+    padding: 0 !important;
+    background-color: #001F2C !important;
+}
+
+.navbar-brand{
+    padding: 0 !important;
+}
+
+.logo-marca{
+    width: 150px;
+}
+
+.avatar{
+    width: 50px;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+
+.panel-izquierdo{
+    background-color: #EDF2F7;
+    height: 85vh;
+    padding: 0;
+    display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: space-between;
+	align-items: flex-start;
+	align-content: center;
+}
+
+.menus{
+    color: #2c5282;
+    display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: space-around;
+	align-items: flex-start;
+	align-content: center;
+}
+
+h5{
+    color: #4299E1;
+}
+
+.btn-final{
+    width: 100%;
+    height: 4.3rem;
+    margin: 0;
+    background-color: #398AB9;
+    color: white;
+}
+
+.principal{
+    background-color: #F3F3F3;
+}
+
+.contenido{
+    background-color: #FFF;
+    width: 100%;
+    height: 85vh;
+    padding: 30px;
+}
+
+.filtros{
+    display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: flex-end;
+	align-items: center;
+	align-content: center;
+}
+
+.form-col{
+    background-color: #FFF;
+}
+
+.contenido-modal{
+    width: 300px;
+}
+
+.opciones{
+    display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: space-around;
+	align-items: center;
+	align-content: stretch;
+}
+
+.encabezado{
+    text-align: center;
+}
