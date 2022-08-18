@@ -9,6 +9,7 @@ import { CarritoComponent } from './carrito/carrito.component';
 import { ListaEmpresasComponent } from './lista-empresas/lista-empresas.component';
 import { OrdenesComponent } from './ordenes/ordenes.component';
 import { ArchivosComponent } from './archivos/archivos.component';
+import { PageComponent } from './compani/page/page.component';
 
 const routes: Routes = [
   {
@@ -58,6 +59,10 @@ const routes: Routes = [
       import('./companies/companies.module').then((m) => m.CompaniesModule),
     canActivate: [ValidarTokenGuard],
     canLoad: [ValidarTokenGuard],
+  },
+  {
+    path: 'companies/:idCompanies/pages/:idPage',
+    component: PageComponent,
   },
   {
     path: '**',

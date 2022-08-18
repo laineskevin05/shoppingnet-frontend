@@ -17,3 +17,6 @@ small{
     color: #A0AEC0;
 }
 
+.seleccionPlantilla{
+    outline: solid aqua 2px;
+}

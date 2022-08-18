@@ -8,7 +8,6 @@
       [formGroup]="miFormulario"
       (ngSubmit)="login()"
     >
-      >
       <div class="pb-3 pt-4">
         <label class="form-label">Correo Electronico</label>
         <input
@@ -17,6 +16,9 @@
           class="form-control border"
           placeholder="Ingrese su correo"
         />
+        <div class="fs-6 text-danger" *ngIf="miFormulario.get('email')?.errors">
+          El correo no es valido
+        </div>
       </div>
       <div class="pb-4">
         <label class="form-label">Contraseña</label>
@@ -26,6 +28,12 @@
           formControlName="password"
           placeholder="Ingrese su contraseña"
         />
+        <div
+          class="fs-6 text-danger"
+          *ngIf="miFormulario.get('password')?.errors"
+        >
+          La contraseña no es valida
+        </div>
       </div>
       <div class="container-fluid pb-4">
         <div class="row">

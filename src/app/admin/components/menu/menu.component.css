@@ -14,3 +14,7 @@
 .menu-item:hover{
     color: #000000;
 }
+.menu-item-activo{
+    color: #000000;
+    font-weight: 600;
+}

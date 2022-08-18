@@ -31,7 +31,12 @@ export class LoginComponent {
     this.authService.login(email, password).subscribe((resp: AuthResponse) => {
       console.log('Login exitoso!', resp.ok, resp.usuario?.tipoUsuario);
       if (resp.ok === true) {
-        this.router.navigateByUrl('/admin-companies/');
+        if ((resp.ok, resp.usuario?.tipoUsuario === 'empresa')) {
+          this.router.navigateByUrl('/admin-companies/');
+        }
+        if ((resp.ok, resp.usuario?.tipoUsuario === 'administrador')) {
+          this.router.navigateByUrl('/admin/');
+        }
       } else {
         console.log('Error', resp.ok, 'error');
       }

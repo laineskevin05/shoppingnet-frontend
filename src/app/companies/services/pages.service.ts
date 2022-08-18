@@ -29,8 +29,9 @@ export class PagesService {
     return this.http.post<CreatePageResponse>(url, pagina, { headers });
   }
 
-  getPaginas(): Observable<GetPageResponse> {
-    const idUser: string = this.authService.usuario.uid || '';
+  getPaginas(user?: string): Observable<GetPageResponse> {
+    const idUser: string | undefined =
+      typeof user === 'undefined' ? this.authService.usuario.uid : user;
 
     const url: string = `${this.baseURL}/companies/page/${idUser}`;
     const headers = new HttpHeaders().set(
@@ -52,5 +53,14 @@ export class PagesService {
       { id: pagina?._id, page: pagina },
       { headers }
     );
+  }
+
+  getPlantillas(): Observable<GetPageResponse> {
+    const url: string = `${this.baseURL}/admin/plantillas`;
+    const headers = new HttpHeaders().set(
+      'x-token',
+      localStorage.getItem('token') || ''
+    );
+    return this.http.get<GetPageResponse>(url, { headers });
   }
 }

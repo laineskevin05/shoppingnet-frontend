@@ -1,24 +1,22 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { FormBuilder, FormGroup } from '@angular/forms';
-import { DomSanitizer } from '@angular/platform-browser';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { Modulo, Page } from 'src/app/companies/types/page.interface';
 
 import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 import {
   ChangeEvent,
   CKEditorComponent,
 } from '@ckeditor/ckeditor5-angular/ckeditor.component';
-import '../../types/interfaces';
-import { PagesService } from '../../services/pages.service';
-import { Modulo, Page } from '../../types/page.interface';
-import { ProductosService } from 'src/app/compani/productos.service';
+import { FormBuilder, FormGroup } from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
+import { DomSanitizer } from '@angular/platform-browser';
+import { AdminService } from '../../service/admin.service';
 
 @Component({
-  selector: 'app-edit-page',
-  templateUrl: './edit-page.component.html',
-  styleUrls: ['./edit-page.component.css'],
+  selector: 'app-edit-plantilla',
+  templateUrl: './edit-plantilla.component.html',
+  styleUrls: ['./edit-plantilla.component.css'],
 })
-export class EditPageComponent implements OnInit {
+export class EditPlantillaComponent implements OnInit {
   ///Edito CKEditor
   public Editor = ClassicEditor;
   public modulos: Modulo[] | undefined;
@@ -52,8 +50,6 @@ export class EditPageComponent implements OnInit {
   ].reverse();
 
   @ViewChild('myNameElem') myNameElem!: CKEditorComponent;
-  @ViewChild('selectNuevoTTelefono') selectNuevoTTelefono!: ElementRef<any>;
-  @ViewChild('selectNuevoTPc') selectNuevoTPc!: ElementRef;
 
   public miFormulario: FormGroup = this.fb.group({
     valorSelect: ['0'],
@@ -73,15 +69,14 @@ export class EditPageComponent implements OnInit {
 
   constructor(
     private fb: FormBuilder,
-    private productosService: ProductosService,
     private route: ActivatedRoute,
-    private pagesService: PagesService,
+    private adminService: AdminService,
     public sanitizer: DomSanitizer
   ) {
     this.tab = '0';
 
     //Carga de datos de las paginas
-    this.pagesService.getPaginas().subscribe((resp) => {
+    this.adminService.getPlantillas().subscribe((resp) => {
       this.pagina = resp.pages.find(
         (page) => page._id === this.route.snapshot.params['id']
       );
@@ -106,10 +101,6 @@ export class EditPageComponent implements OnInit {
         (element) => element != undefined
       );
       this.code = this.moduloActualMonaco?.html || '';
-    });
-
-    this.productosService.getProductos().subscribe((resp) => {
-      console.log(resp);
     });
   }
   ngOnInit(): void {}
@@ -172,7 +163,7 @@ export class EditPageComponent implements OnInit {
       this.pagina.nombre = this.miFormularioPage.value.nombre || '';
       this.pagina.mostrarNavbar =
         this.miFormularioPage.value.valorSelectNavbar || true;
-      this.pagesService.actualizarPagina(this.pagina).subscribe(
+      this.adminService.actualizarPlantilla(this.pagina).subscribe(
         (res) => {
           console.log(res);
           this.isSuccessUpdatePage = true;

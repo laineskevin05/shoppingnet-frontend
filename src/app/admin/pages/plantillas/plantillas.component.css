@@ -1,0 +1,19 @@
+#hr{
+  border-color: rgb(0, 0, 0,0.5)!important;
+}
+span{
+  color: #2A4365;
+}
+
+#btn-aniadir-page{
+  background-color: #2A4365;
+  color: white;
+  border: 0;
+}
+
+small{
+  font-weight: 200;
+  font-size: smaller;
+  color: #A0AEC0;
+}
+

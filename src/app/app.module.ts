@@ -12,6 +12,7 @@ import { CarritoComponent } from './carrito/carrito.component';
 import { ListaEmpresasComponent } from './lista-empresas/lista-empresas.component';
 import { OrdenesComponent } from './ordenes/ordenes.component';
 import { ArchivosComponent } from './archivos/archivos.component';
+import { PageComponent } from './compani/page/page.component';
 registerLocaleData(locateES, 'es');
 
 @NgModule({
@@ -25,6 +26,7 @@ registerLocaleData(locateES, 'es');
     ListaEmpresasComponent,
     OrdenesComponent,
     ArchivosComponent,
+    PageComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [{ provide: LOCALE_ID, useValue: 'es' }],

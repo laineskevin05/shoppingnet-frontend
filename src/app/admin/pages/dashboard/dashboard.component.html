@@ -1,1 +1,27 @@
-<p>dashboard works!</p>
+<div class="container-fluid px-4 mt-2">
+  <div class="row">
+    <h3 class="col-12 fs-4 mb-3 mt-3">Usuarios</h3>
+    <table class="table table-striped table-hover">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">ID</th>
+          <th scope="col">Tipo de usuario</th>
+          <th scope="col">Nombre</th>
+          <th scope="col">Correo</th>
+          <th scope="col">Fecha de registro</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of usuarios; let i = index">
+          <th scope="row">{{ i + 1 }}</th>
+          <td>{{ user._id }}</td>
+          <td>{{ user.tipoUsuario }}</td>
+          <td>{{ user.nombre }}</td>
+          <td>{{ user.email }}</td>
+          <td>{{ user.createdAt | date: "longDate" }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
